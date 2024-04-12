@@ -1,6 +1,6 @@
 clf, clc, clearvars, close all
 
-x = logspace(-2, 2, 10000);
+x = logspace(-2, 2, 1000);
 y = (log(x)./x.^2 )-(x.^3);
 
 % Maximum error method 1
@@ -39,7 +39,7 @@ plot(x, rel_error_a1, 'Color', 'red', 'LineWidth', 1.5);
 plot(x, max_rel_error_a1, 'Color', 'blue', 'LineWidth',1.5);
 xscale('log')
 yscale('log')
-legend('real error', 'maximum error'), xlabel('x'), ylabel('σ'), title('A1')
+legend('|σ1(ỹ)|', 'max(|σ1(ỹ)|)'), xlabel('x'), ylabel('σ'), title('A1')
 hold off
 
 
@@ -49,5 +49,7 @@ plot(x, rel_error_a2, 'Color', 'red', 'LineWidth', 1.5);
 plot(x, max_rel_error_a2, 'Color', 'blue', 'LineWidth',1.5);
 xscale('log')
 yscale('log')
-legend('real error', 'maximum error'), xlabel('x'), ylabel('σ'), title('A2')
+legend('|σ2(ỹ)|', 'max(|σ2(ỹ)|)'), xlabel('x'), ylabel('σ'), title('A2')
 hold off
+
+set(gca, 'FontSize', 12)
